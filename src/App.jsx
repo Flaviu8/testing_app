@@ -8,7 +8,7 @@ const App = () => {
   const [uploadProgress, setUploadProgress] = useState(0); // To track upload progress
 
   const baseUrl = import.meta.env.MODE === "production"
-  ? " https://9a6e-2a02-2f08-2e12-3500-152d-5751-ab16-c053.ngrok-free.app"  // Replace with your actual production URL
+  ? " https://2245-2a02-2f08-2e12-3500-1472-27a-c421-96c3.ngrok-free.app "  // Replace with your actual production URL
   : "http://localhost:8080";
 
 
