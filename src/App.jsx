@@ -7,6 +7,11 @@ const App = () => {
   const [fileList, setFileList] = useState([]);
   const [uploadProgress, setUploadProgress] = useState(0); // To track upload progress
 
+  const baseUrl = import.meta.env.MODE === "production"
+  ? " https://9a6e-2a02-2f08-2e12-3500-152d-5751-ab16-c053.ngrok-free.app"  // Replace with your actual production URL
+  : "http://localhost:8080";
+
+
   // Fetch the list of files on page load
   useEffect(() => {
     fetchFiles();
@@ -15,47 +20,53 @@ const App = () => {
   // Fetch all files from the backend
   const fetchFiles = async () => {
     try {
-      const response = await axios.get("https://ce7b-2a02-2f08-2e12-3500-a1d6-33bf-d2a5-bf2d.ngrok-free.app/files");
+      const response = await axios.get(`${baseUrl}/files`);
       setFileList(response.data);
+      console.log(response.data);
     } catch (error) {
       console.error("Error fetching files:", error);
     }
   };
 
   // Handle file upload with progress tracking
-  const handleFileUpload = async (event) => {
+  const handleFileUpload = async () => {
+    if (!file) {
+      alert("Please select a file to upload!");
+      return;
+    }
+
     const formData = new FormData();
     formData.append("file", file);
 
     try {
       await axios.post(
-        " https://ce7b-2a02-2f08-2e12-3500-a1d6-33bf-d2a5-bf2d.ngrok-free.app/upload",
+        `${baseUrl}/upload`,
         formData,
         {
           headers: {
             "Content-Type": "multipart/form-data",
           },
           onUploadProgress: (progressEvent) => {
-            // Calculate the progress percentage
             const percent = Math.round((progressEvent.loaded * 100) / progressEvent.total);
-            setUploadProgress(percent); // Update the progress state
+            setUploadProgress(percent);
           },
         }
       );
+
       fetchFiles(); // Refresh file list after upload
       setUploadProgress(0); // Reset progress after upload is complete
     } catch (error) {
       console.error("Error uploading file:", error);
-      setUploadProgress(0); // Reset progress in case of error
+      setUploadProgress(0);
     }
   };
 
   // Handle file deletion
   const handleFileDelete = async (fileName) => {
     try {
-      await axios.delete(`https://ce7b-2a02-2f08-2e12-3500-a1d6-33bf-d2a5-bf2d.ngrok-free.app/delete/${fileName}`, {
+      await axios.delete(`${baseUrl}/delete/${fileName}`, {
         headers: {
-          'Content-Type': 'application/json',  // Set the content-type header
+          "Content-Type": "application/json",
         },
       });
       fetchFiles(); // Refresh file list after delete
@@ -67,7 +78,7 @@ const App = () => {
   return (
     <div className="App">
       <h1>Cloud Storage</h1>
-      
+
       {/* File Upload Section */}
       <div>
         <input
@@ -75,7 +86,7 @@ const App = () => {
           onChange={(e) => setFile(e.target.files[0])}
         />
         <button onClick={handleFileUpload}>Upload File</button>
-        
+
         {/* Display progress bar during upload */}
         {uploadProgress > 0 && (
           <div className="progress-container">
@@ -91,10 +102,28 @@ const App = () => {
       <div>
         <h2>Uploaded Files</h2>
         <ul>
-          {fileList.map((file) => (
-            <li key={file.id}>
+          {fileList.map((file, index) => (
+            <li key={index}>
               {file.fileName} - {file.fileSize} bytes
               <button onClick={() => handleFileDelete(file.fileName)}>Delete</button>
+
+              {/* Show image preview if the file is an image */}
+              {file.fileName && /\.(jpeg|jpg|png|gif)$/i.test(file.fileName) && (
+                <img 
+                  src={`${baseUrl}/storage/${file.fileName}`}
+                  alt={file.fileName}
+                  style={{ width: '300px', height: 'auto' }}
+                />
+              )}
+
+              {/* Show video preview if the file is a video */}
+              {file.fileName && /\.(mp4|mov|avi|wmv)$/i.test(file.fileName) && (
+                <video 
+                  src={`${baseUrl}/storage/${file.fileName}`}
+                  controls
+                  style={{ width: '300px', height: 'auto' }}
+                />
+              )}
             </li>
           ))}
         </ul>
