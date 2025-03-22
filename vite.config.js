@@ -5,9 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   server: {
     proxy: {
-      'api/delete': 'http://localhost:8080',
-        allowedHosts: ["weak-towns-push.loca.lt"],
-    
+      'api/delete': ' https://ce7b-2a02-2f08-2e12-3500-a1d6-33bf-d2a5-bf2d.ngrok-free.app',    
     }
   },
   

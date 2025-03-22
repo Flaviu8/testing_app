@@ -15,7 +15,7 @@ const App = () => {
   // Fetch all files from the backend
   const fetchFiles = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/files");
+      const response = await axios.get("https://ce7b-2a02-2f08-2e12-3500-a1d6-33bf-d2a5-bf2d.ngrok-free.app/files");
       setFileList(response.data);
     } catch (error) {
       console.error("Error fetching files:", error);
@@ -29,7 +29,7 @@ const App = () => {
 
     try {
       await axios.post(
-        "http://localhost:8080/upload",
+        " https://ce7b-2a02-2f08-2e12-3500-a1d6-33bf-d2a5-bf2d.ngrok-free.app/upload",
         formData,
         {
           headers: {
@@ -53,7 +53,7 @@ const App = () => {
   // Handle file deletion
   const handleFileDelete = async (fileName) => {
     try {
-      await axios.delete(`http://localhost:8080/delete/${fileName}`, {
+      await axios.delete(`https://ce7b-2a02-2f08-2e12-3500-a1d6-33bf-d2a5-bf2d.ngrok-free.app/delete/${fileName}`, {
         headers: {
           'Content-Type': 'application/json',  // Set the content-type header
         },
