@@ -15,7 +15,7 @@ import filesIcon from "../../../assets/icons/files-colors.svg"
 
   
 const Home = () => {
-  const [selected, setSelected] = useState("Named");
+  const [selected, setSelected] = useState("Name");
   const options = ["Name", "Last opened", "Last modified"];
 
   const fileIconMap = {

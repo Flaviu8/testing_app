@@ -72,7 +72,12 @@
   border: none;
   margin-top: 26px;
   cursor: pointer;
-  color:#000000
+  color:#000000;
+}
+
+.get-started p {
+  font-weight: 200;
+  font-size: 18px;
 }
 
 .get-started .arrow-image {
