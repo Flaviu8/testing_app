@@ -528,6 +528,10 @@ width: 100px;
     width: calc(100% - 0px);
   }
 
+  .my-drive {
+    margin-top: 0px;
+  }
+
   .user-box .files-hero {
     display: none;
   }
