@@ -446,12 +446,12 @@ width: 100px;
 
 @media screen and (max-width: 768px) {
   .main-content {
-    margin-left: 0%; /* Offset for sidebar */
-    width: calc(100% - 0%);
+    margin-left: 0px; /* Offset for sidebar */
+    width: calc(100% - 0px);
   }
 
   .user-box img {
-    width: 240px;
+    display: none;
   }
 
   .user-box h1 {
@@ -489,8 +489,63 @@ width: 100px;
 }
 
 
+.documents-title h3 {
+  font-size: 19px;
+}
+
+.documents-title a {
+  font-size: 16px;
+}
+
+.folders-title h3 {
+  font-size: 19px;
+}
+
+.dropdown-button {
+  font-size: 15px;
+}
+
+
 .docs {
   display: block;
+}
+
+.folders {
+  display: block;
+}
+
+.folder-box {
+  width: 100%;
+  margin-top: 16px;
+}
+
+.folder-box img {
+  width: 32px;
+}
+
+.folder-box .folder-image {
+  width: 80px;
+}
+
+
+.folder-details {
+  padding: 14px;
+}
+
+.folder-title h4 {
+  font-size: 18px;
+  margin-left: 8px;
+
+}
+
+.folder-details p {
+  margin-left: 8px;
+  font-size: 15px;
+}
+
+
+.folder-details img {
+  width: 23px;
 }
 
 .box-containers {
