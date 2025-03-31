@@ -20,11 +20,11 @@ export default function Sidebar({handleOnClick, close}) {
     const percentage = ((usedMemory / totalMemory) * 100).toFixed(1); // Rounded percentage
     const freeMemory = totalMemory - usedMemory; // Free space calculation
 
-//    const [close, setClose] = useState(false)
+   const [create, setCreate] = useState(false)
   
-//       const handleOnClick = () => {
-//           setClose(!close)
-//       }
+      const handleCreate = () => {
+          setCreate(!create)
+      }
 
   return (
     <aside className= { close ? "sidebar active" : "sidebar" } >
@@ -38,7 +38,16 @@ export default function Sidebar({handleOnClick, close}) {
             </div>
             </div>
             <div className="add-btn-main">
-                <button type="submit" className="add-btn"> <img src={add} alt="add" /><p>Create New</p></button>
+                <button onClick={handleCreate} className="add-btn"> <img src={add} alt="add" /><p>Create New</p></button>
+            </div>
+            <div className= {!create ? 'create-main' : "create-main active"}>
+                <div className='create'>
+                    <ul>
+                        <li>New Container</li>
+                        <li>Upload Folders</li>
+                        <li>Upload Files</li>
+                    </ul>
+                </div>
             </div>
             <div className='sidebar-menu'>
                 <ul>

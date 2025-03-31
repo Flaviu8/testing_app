@@ -6,16 +6,25 @@ import folder from "../../../assets/img/folder.jpg"
 import arrow from "../../../assets/icons/arrow.svg"
 import Sidebar from "../sidebar/Sidebar";
 import Navbar from "../navbar/Navbar";
-import { FaFilePdf, FaFileWord, FaFileExcel, FaFileImage, FaFileAlt, FaFilePowerpoint, FaFileAudio, FaFileVideo } from "react-icons/fa";
+import { FaFilePdf, FaFileWord, FaFileExcel, FaFileImage, FaFileAlt, FaFilePowerpoint, FaFileAudio, FaFileVideo, FaEye } from "react-icons/fa";
 import folders from "../../../assets/img/folders.jpg"
 import more from "../../../assets/icons/more-vertical.svg"
 import recent from "../../../assets/icons/recent-color.svg"
 import filesIcon from "../../../assets/icons/files-colors.svg"
+import eye from "../../../assets/icons/eye.svg"
+import bin from "../../../assets/icons/bin.svg"
+import pen from "../../../assets/icons/pen.svg"
+import download from "../../../assets/icons/download.svg"
+
 
 
   
 const Home = () => {
   const [selected, setSelected] = useState("Name");
+  const [mydrive, setMyDrive] = useState("Name");
+
+  const option = ["New Container", "Upload Folders", "Upload files"];
+
   const options = ["Name", "Last opened", "Last modified"];
 
   const fileIconMap = {
@@ -41,11 +50,15 @@ const Home = () => {
   ];
 
      const [close, setClose] = useState(false)
+     const [details, setDetails] = useState(false)
   
       const handleOnClick = () => {
           setClose(!close)
       }
 
+      const handleDetails = () => {
+        setDetails(!details)
+      }
 
     // Dynamically render the icon based on the file extension
     const DynamicFileIcon = ({ filePath }) => {
@@ -69,11 +82,18 @@ const Home = () => {
         </div>
         {/* Content */}
         <main className="content">
-          <div className='my-drive-main'>
+          <div className='my-drive-main dropdown-button custom-dropdown'>
             <div className='my-drive'>
               <p>My Drive</p>
               <img src={dropdown} alt="dropdown" />
             </div>
+            <div className="dropdown-my-drive">
+                    {option.map((options, index) => (
+                      <div key={index} className="dropdown-item" onClick={() => setSelected(options)}>
+                        {options}
+                      </div>
+                    ))}
+                </div>
           </div>
           <div className="box-container">
             <div className='user-box'>
@@ -140,8 +160,30 @@ const Home = () => {
                   <div className="folders">
                           <div className='folder-box'>
                             <div className="top-folder">
-                              <img className="folder-image" src={folders}  alt="folders"/>
-                              <img src={more} alt="more"/>
+                              <div>
+                                  <img className="folder-image" src={folders}  alt="folders"/>
+                              </div>
+                              <div className="more-details">
+                                 <button onClick={handleDetails} className="more"><img src={more} alt="more"/></button>
+                                 <div className={details ? "more-option" : "more-option active"}>
+                                      <div className="more-options">
+                                          <ul>
+                                            <li>
+                                              <a className="more-link" href=""><img src={eye} />View</a>
+                                            </li>
+                                            <li>
+                                              <a className="more-link" href=""><img src={bin} />Delete</a>
+                                            </li>
+                                            <li>
+                                              <a className="more-link" href=""><img src={pen} />Edit</a>
+                                            </li>
+                                            <li>
+                                              <a className="more-link" href=""><img src={download} />Download</a>
+                                            </li>
+                                          </ul>
+                                      </div>
+                              </div>
+                            </div>
                             </div>
                             <div className="folder-details">
                               <div className="folder-title">

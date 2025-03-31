@@ -81,6 +81,41 @@
     background-color: #FFB703;
 }
 
+.create-main {
+  display: none;
+  transition: 0.4s ease-in;
+}
+
+
+.create-main.active {
+  display: block;
+  margin-top: 8px;
+  transition: 0.4s ease-in;
+
+}
+
+.create {
+  background-color: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  position: absolute;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 85%;
+
+}
+
+.create ul li {
+  line-height: 46px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 300;
+}
+
+.create ul li:hover {
+  background-color: #eee;
+}
+
 .sidebar-menu {
     margin-top: 30px;
 }
