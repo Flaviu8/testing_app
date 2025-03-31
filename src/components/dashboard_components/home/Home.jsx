@@ -165,7 +165,7 @@ const Home = () => {
                               </div>
                               <div className="more-details">
                                  <button onClick={handleDetails} className="more"><img src={more} alt="more"/></button>
-                                 <div className={details ? "more-option" : "more-option active"}>
+                                 <div className={!details ? "more-option" : "more-option active"}>
                                       <div className="more-options">
                                           <ul>
                                             <li>
