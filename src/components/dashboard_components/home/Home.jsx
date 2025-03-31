@@ -19,16 +19,16 @@ const Home = () => {
   const options = ["Name", "Last opened", "Last modified"];
 
   const fileIconMap = {
-    pdf: <FaFilePdf size={130} color="red" />,      // Red for PDF
-    docx: <FaFileWord size={130} color="blue" />,   // Blue for Word
-    xlsx: <FaFileExcel size={130} color="green" />, // Green for Excel
-    jpg: <FaFileImage size={130} color="orange" />, // Orange for JPG
-    jpeg: <FaFileImage size={130} color="purple" />, // Purple for JPEG
-    png: <FaFileImage size={130} color="pink" />,    // Pink for PNG
-    pptx: <FaFilePowerpoint size={130} color="yellow" />, // Yellow for Powerpoint
-    mp3: <FaFileAudio size={130} color="brown" />,   // Brown for MP3
-    mp4: <FaFileVideo size={130} color="gray" />,    // Gray for MP4
-    txt: <FaFileAlt size={130} color="black" />,     // Black for TXT
+    pdf: <FaFilePdf size={100} color="red" />,      // Red for PDF
+    docx: <FaFileWord size={100} color="blue" />,   // Blue for Word
+    xlsx: <FaFileExcel size={100} color="green" />, // Green for Excel
+    jpg: <FaFileImage size={100} color="orange" />, // Orange for JPG
+    jpeg: <FaFileImage size={100} color="purple" />, // Purple for JPEG
+    png: <FaFileImage size={100} color="pink" />,    // Pink for PNG
+    pptx: <FaFilePowerpoint size={100} color="yellow" />, // Yellow for Powerpoint
+    mp3: <FaFileAudio size={100} color="brown" />,   // Brown for MP3
+    mp4: <FaFileVideo size={100} color="gray" />,    // Gray for MP4
+    txt: <FaFileAlt size={100} color="black" />,     // Black for TXT
   };
 
 

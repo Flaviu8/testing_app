@@ -161,7 +161,7 @@
   width: 25%;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 14px;
+  padding: 26px;
   margin-top: 24px;
   text-align: center;
   margin-right: 12px;
@@ -178,10 +178,10 @@
 }
 
 .documents-box button {
-  background-color: transparent;
+  background-color: rgb(245, 245, 245);
   border: 1px solid rgb(209, 209, 209);
   padding: 20px;
-  width: 80%;
+  width: 90%;
 }
   
 
