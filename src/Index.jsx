@@ -1,10 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 export default function Index() {
   return (
     <div>
-        <Link to="/dashboard"/>
+        <NavLink to="/dashboard" >Dashboard</NavLink>
+        Hello
     </div>
   )
 }
