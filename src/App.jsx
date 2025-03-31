@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Login from "./components/login/Login";
 import { Routes, Route } from "react-router";
-import Dashboard from "./components/dashboard";
 import Register from "./components/register/Register";
 import ForgotPassword from "./components/forgot_password/ForgotPassword";
 import ResetPassword from "./components/forgot_password/ResetPassword";
+import Dashboard from "./components/dashboard";
 
 
 const App = () => {
