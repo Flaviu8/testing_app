@@ -6,6 +6,7 @@ import Register from "./components/register/Register";
 import ForgotPassword from "./components/forgot_password/ForgotPassword";
 import ResetPassword from "./components/forgot_password/ResetPassword";
 import Dash from "./components/Dash";
+import Index from "./Index";
 
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
   return (
     <div className="App">
       <Routes>
+      <Route path="/" element={<Index />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dash />} />
         <Route path="/register" element={<Register />} />
