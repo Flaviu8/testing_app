@@ -15,6 +15,7 @@ import eye from "../../../assets/icons/eye.svg";
 import bin from "../../../assets/icons/bin.svg";
 import pen from "../../../assets/icons/pen.svg";
 import download from "../../../assets/icons/download.svg";
+import Files from "../files/Files";
 
 const Home = () => {
   const [selected, setSelected] = useState("Name");
@@ -263,9 +264,9 @@ const Home = () => {
                     </div>
                   </div>
                 </div>
-                
                 {/* Repeat the folder-box components as necessary */}
               </div>
+              <Files />
             </div>
           </div>
         </main>
