@@ -450,7 +450,7 @@ width: 100px;
     width: calc(100% - 0px);
   }
 
-  .user-box img {
+  .user-box .files-hero {
     display: none;
   }
 

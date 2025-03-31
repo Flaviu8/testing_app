@@ -15,7 +15,7 @@ import filesIcon from "../../../assets/icons/files-colors.svg"
 
   
 const Home = () => {
-  const [selected, setSelected] = useState("Option 1");
+  const [selected, setSelected] = useState("Named");
   const options = ["Name", "Last opened", "Last modified"];
 
   const fileIconMap = {
@@ -83,7 +83,7 @@ const Home = () => {
                 <button className="get-started"><p>Get Started</p><img className='arrow-image' src={arrow} alt='arrow'/></button>
               </div>
               <div>
-                <img src={filesHero} alt='files-hero'/>
+                <img className="files-hero" src={filesHero} alt='files-hero'/>
               </div>
             </div>
             <div className='quick-box'>
