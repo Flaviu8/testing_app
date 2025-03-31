@@ -346,11 +346,12 @@
   color: #000000;
   font-size: 14px;
   font-weight: 300;
+  line-height: 40px;
 }
 
 
 .more-link img {
-  width: 16px;
+  width: 15px;
   margin-right: 6px;
 }
 .folder-details {
