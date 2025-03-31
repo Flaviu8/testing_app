@@ -1,0 +1,227 @@
+.main-login {
+    background-image: url("../../assets/img/white.jpg");
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    
+
+}
+
+.register {
+    display: flex;
+    justify-content: center;
+    padding-top: 5%;
+}
+
+.registration-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.r-title h2 {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 14px;
+}
+
+.r-title {
+    margin-bottom: 24px;
+    font-size: 18px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    background-color: #f4f4f4;
+    padding: 10px;
+    width: 48%;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 24px;
+}
+
+.tab-btn.active {
+    background-color: #FBB13C; /* Accessible contrast color */
+    color: rgb(0, 0, 0);
+}
+
+.tab-btn:hover {
+    background-color: #ddd;
+}
+
+
+.registration-form input[type="text"] {
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    border-color: #e6e0e0;
+}
+
+.registration-form input[type="password"] {
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    border-color: #e6e0e0;
+}
+
+.registration-form input[type="email"] {
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    border-color: #e6e0e0;
+}
+
+.registration-form input[type="checkbox"] {
+    border-radius: 100%;
+    border-color: #e6e0e0;
+    margin-right: 4px;
+    margin-top: 1px;
+    width: 16px;
+}
+
+.registration-form input:focus {
+    border-color: #FBB13C;
+    border-width: 0.3cap;
+}
+label {
+    position: relative;
+    display: flex;
+  }
+    
+  span {
+    padding: 10px;
+    pointer-events: none;
+    position: absolute;
+    left: 6px;
+    top: 0;
+    transition: 0.4s;
+    opacity: 0.5;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  
+
+  
+  /* When input is focused, or the placeholder is not being displayed, change the border to blue */
+  input:focus, input:not(:placeholder-shown) {
+    outline: none;
+    border-color: #3458B3; 
+  }
+  
+  /* When input is focused, or the placeholder is not being displayed, change the placeholder size, position and color */
+  input:focus + span, input:not(:placeholder-shown) + span {
+    opacity: 1;
+    background-color: white;
+    color: #3458B3;
+    transform: scale(0.75) translateY(-65%) translateX(-20px);
+  }
+
+  .agree {
+    display: flex;
+  }
+  
+.register-btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 64px;
+}
+
+.submit-btn {
+    background-color: #FBB13C; /* Accessible contrast color */
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 9px;
+    font-size: 16px;
+    border-radius: 6px;
+    width: 140px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #FFB703;
+}
+
+/* Hide all tabs by default */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.logo-form img{
+    width: 200px;
+}
+
+.remember-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.recover {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.recover a {
+    color: #df7700;
+}
+
+.account-s p{
+    margin-bottom: 14px;
+    margin-top: 12px;
+    color: #000000;
+    font-size: 18px;
+    margin-top: 64px;
+}
+
+.account-s a {
+    color: #df7700;
+}
+
+.r-message {
+    margin-top: 12px;
+}
+
+.r-login {
+    color: #df7700;
+
+}
+
+@media screen and (max-width: 768px) {
+ .registration-container {
+    width: 96%;
+ }
+
+}

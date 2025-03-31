@@ -1,0 +1,125 @@
+.dashboard-navbar {
+    background-color: rgb(255, 255, 255);
+    padding: 15px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+}
+
+.menu-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-btn {
+    display: none;
+}
+
+.navbar-logo img {
+    display: none;
+}
+
+.menu-navbar {
+    display: flex;
+    align-items: center;
+    margin-left: 12px;
+}
+
+.navbar-logo img {
+    width: 120px;
+}
+.close-btn{
+    margin-right: 16px;
+}
+
+.close-btn button{
+    border: 1px solid rgb(218, 218, 218);
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.close-btn img {
+    width: 36px;
+}
+
+.navbar-links img {
+    width: 28px;
+}
+
+.navbar-links ul {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 64px;
+   
+}
+
+.navbar-link {
+    background-color: rgb(255, 255, 255);
+    padding: 6px;
+    display: none;
+    width: 100%;
+}
+
+
+.navbar-link ul {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 16px;
+}
+
+.navbar-link ul li {
+    margin-left: 14px;
+}
+
+.navbar-link img {
+    width: 28px;
+}
+
+
+.dashboard-navbar ul li {
+    margin-left: 36px;
+    cursor: pointer;
+
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+    .dashboard-navbar {
+        padding: 0px;
+    }
+    .navbar-links ul {
+        display: none;
+    }
+
+    .close-btn {
+        display: block;
+    }
+    
+    .navbar-logo img {
+        display: block;
+    }
+
+
+    .navbar-link {
+      top: -200px;
+      position: fixed;
+      transition: 0.8s ease-in-out;
+      display: block;
+    }
+
+
+    .navbar-link.active {
+        background-color: rgb(255, 255, 255);
+        padding: 6px;
+        top: 116px;
+        display: block;
+    }
+    
+
+
+}
