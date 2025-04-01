@@ -9,6 +9,10 @@ import more from "../../../assets/icons/more.svg"
 import add from "../../../assets/icons/add.svg"
 import cloud from "../../../assets/icons/cloud.svg"
 import hamburger from "../../../assets/icons/hamburger-menu.svg"
+import dropdown from "../../../assets/icons/dropdown.svg"
+import right from "../../../assets/icons/right.svg"
+import folder from "../../../assets/img/folder.jpg"
+
 
 import "./Sidebar.css"
 import Logo from "../../../assets/logo/menda.png"
@@ -21,6 +25,15 @@ export default function Sidebar({handleOnClick, close}) {
     const freeMemory = totalMemory - usedMemory; // Free space calculation
 
    const [create, setCreate] = useState(false)
+   const [showMenu, setShowMenu] = useState(false)
+  
+   const handleShow = () => {
+    if (!showMenu) {
+      setShowMenu(true);
+    } else {
+      setTimeout(() => setShowMenu(false), 300); // Delay to allow transition
+    }
+  };
   
       const handleCreate = () => {
           setCreate(!create)
@@ -59,8 +72,20 @@ export default function Sidebar({handleOnClick, close}) {
                 <ul>
                     <li>
                         <img src={hard} alt="storage" />
-                        <p> My Drive</p>
+                        <button onClick={handleShow} className='my-drive-menu'>
+                             <p> My Drive</p>
+                             {!showMenu ? <img src={right} /> : <img src={dropdown} />}
+                        </button>
                     </li>
+                    <div className={!showMenu ? 'menu-storage' : 'menu-storage active'}>
+                        <div className='submenu-storage'>
+                            <ul>
+                                <li><img src={folder} />My container 1</li>
+                                <li><img src={folder} />My container 2</li>
+                                <li><img src={folder} />My container 3</li>
+                            </ul>
+                        </div>
+                    </div>
                 </ul>
                 <ul>
                     <li>

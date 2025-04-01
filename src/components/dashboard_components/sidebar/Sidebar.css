@@ -136,6 +136,45 @@
     color: #FBB13C; /* Accessible contrast color */
 }
 
+.my-drive-menu{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  align-items: center;
+}
+
+.my-drive-menu:hover {
+  color: #FBB13C;
+  cursor: pointer;
+}
+
+.my-drive-menu p {
+  font-weight: 300;
+  font-size: 15px;
+}
+
+.menu-storage {
+  opacity: 0;
+  overflow: hidden;
+  max-height: 0; 
+  transform: translateY(-20px); /* Shift it up */
+  transition: max-height 0.8s ease-in-out, opacity 0.4s ease-in-out, transform 0.8s ease-in-out;
+}
+
+.menu-storage.active {
+  opacity: 1;
+  transform: translateY(0); /* Moves into place */
+  max-height: 300px; 
+}
+
+
+
+.submenu-storage ul li {
+  margin-left: 16px;
+}
+
 .storage-detail {
     display: flex;
     margin-top: 64px;

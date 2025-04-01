@@ -6,14 +6,45 @@
     margin-top: 20px;
   }
 
-.files-box {
+  .files-box {
     background-color: #FFFFFF;
     width: 100%;
     border-radius: 8px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     padding: 34px;
     margin-top: 24px;
-  }
+    overflow-x: auto; /* Enables horizontal scrolling */
+    white-space: nowrap; /* Prevents items from wrapping */
+}
+  
+.files-box-content {
+    display: inline-flex; /* Keeps items in a row */
+    gap: 16px; /* Adds spacing between items */
+}
+
+
+.scroll-wrapper {
+    width: 100%;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    white-space: nowrap; /* Prevents wrapping of content */
+    padding-bottom: 10px; /* Optional: Add spacing at the bottom if needed */
+}
+
+.table-container {
+    display: inline-block; /* Allows horizontal scrolling */
+    min-width: 800px; /* Ensures enough space for scrolling */
+}
+
+.files-detail {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    min-width: 800px; /* Ensures each row stays wide enough */
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+
   
 
   .top-files-box {
